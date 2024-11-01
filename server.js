@@ -5,6 +5,7 @@ require('./config/database');
 const express = require('express');
 const methodOverride = require('method-override');
 const morgan = require('morgan');
+const path = require('path');
 
 // Models
 const Fruit = require('./models/fruit');
@@ -16,6 +17,7 @@ const PORT = process.env.PORT ? process.env.PORT : '3000';
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
 app.use(morgan('dev'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes
 app.get('/', async (req, res) => {

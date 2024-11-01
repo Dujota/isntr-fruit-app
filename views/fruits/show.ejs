@@ -18,6 +18,10 @@
     <p>Wait a little longer!!!</p>
 <% } %>
 
+
+ <p> <%= fruit.isReadyToEat ?  " Ready to Eat!!!":  "Wait a little longer!!!" %></p>
+
+
   <form action="/fruits/<%=fruit._id%>?_method=DELETE" method="POST">
     <button type="submit">Delete <%= fruit.name %></button>
   </form>
